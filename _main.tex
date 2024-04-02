@@ -83,6 +83,9 @@
 % Different font in captions
 \newcommand{\captionfonts}{\small} %wydaje sie, ze nie dziala
 \usepackage[font={small},singlelinecheck=false]{caption}
+\usepackage[font={small},singlelinecheck=false]{subcaption}
+
+%\captionsetup[subfigure]{font=small}
 
 
 %---------------------------------------------------------
@@ -1176,11 +1179,20 @@ backend=biber]{biblatex}
 
 
 
+\let\oldquote\quote
+\let\endoldquote\endquote
+\renewenvironment{quote}{\oldquote\small}{\endoldquote}
+
+\let\oldquotation\quotation
+\let\endoldquotation\endquotation
+\renewenvironment{quotation}{\oldquotation\small}{\endoldquotation}
+
+
 
 %\newenvironment{myquote}[1]{\begin{quote}\small} {\par\end{quote}}
 %\newenvironment{myQuote}{\begin{quotation}{\small}} {\par\end{quotation}}
-\newcommand{\myquote}[1]{\begin{quote}{\small#1\par}\end{quote}}
-\newcommand{\myQuote}[1]{\begin{quotation}{\small#1\par}\end{quotation}}
+%\newcommand{\myquote}[1]{\begin{quote}{\small#1\par}\end{quote}}
+%\newcommand{\myQuote}[1]{\begin{quotation}{\small#1\par}\end{quotation}}
 \newcommand{\mydots}{\hbox to 1em{.\hss.\hss.}}
 
 
@@ -1318,8 +1330,8 @@ backend=biber]{biblatex}
 %\renewcommand{\theequation}{\arabic{equation}}
 
 
-\input{ART_Bielecki/Bielecki.tex}
-%\input{ART_Grygiel/Grygiel.tex}
+%\input{ART_Bielecki/Bielecki.tex}
+\input{ART_Grygiel/Grygiel.tex}
 %\input{ART_Heathcote/Heathcote.tex}
 %\input{ART_Krzanowski/Krzanowski.tex}
 %\input{ART_Leciejewski/Leciejewski.tex}
