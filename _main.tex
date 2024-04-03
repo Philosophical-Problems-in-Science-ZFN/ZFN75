@@ -20,6 +20,7 @@
 %\usepackage{amsbsy}	% \boldsymbol
 \usepackage{amscd}	% diagramy
 \usepackage{amsfonts}	% fonty
+\usepackage{mathrsfs}
 \usepackage{amssymb}	% dodatek math
 \usepackage{amstext}	% \text
 \usepackage{amsthm}
@@ -143,7 +144,7 @@ twoside,top=25mm,bottom=20mm,left=23mm,right=23mm,headheight=14pt}
 
 
 %------------------------- MyriadPro ------------------------------------
-\usepackage{textcomp}
+
 %\usepackage{Myriad}
 \input{glyphtounicode.tex}
 \pdfgentounicode=1
@@ -1273,7 +1274,20 @@ backend=biber]{biblatex}
 \setlength\epigraphwidth{.5\textwidth}
 
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Heathocote
+\usepackage{xspace}
+\usepackage[mla]{xellipsis}
+\newcommand*{\sqrtwo}{\ensuremath{\sqrt{2}}\hspace{0.5ex}\xspace}
+\newcommand{\sqrthree}{\ensuremath{\sqrt{3}}\hspace{0.5ex}\xspace}
+\newcommand{\Hilb}{\ensuremath{\mathscr{H}}\xspace}
+\newcommand{\Hilbtwo}{\ensuremath{\mathscr{H}^{2}}\xspace}
+\newcommand{\etc}{\hspace{1pt}\textit{etc.}\@\xspace}
+\newcommand{\name}[1]{\hspace{0.5ex}`\textit{#1}\hspace{0.45ex}'\hspace{0.55ex}\xspace}
+\newcommand*{\thing}[1]{\hspace{0.75pt}\textit{#1}\hspace{1.5pt}\xspace}
+\newcommand{\ksqrtwo}[1]{\hspace{0.4ex}\textit{#1}\ensuremath{\sqrt{2}}\hspace{0.5ex}\xspace}
+\newcommand{\isqrtwo}[2]{\hspace{0.4ex}\textit{#1}\ensuremath{\sqrt{#2}}\hspace{0.5ex}\xspace}
+\newcommand*{\qv}{q.v.\@}
 
 
 
@@ -1331,9 +1345,9 @@ backend=biber]{biblatex}
 
 
 %\input{ART_Bielecki/Bielecki.tex}
-\input{ART_Grygiel/Grygiel.tex}
-%\input{ART_Heathcote/Heathcote.tex}
-%\input{ART_Krzanowski/Krzanowski.tex}
+%\input{ART_Grygiel/Grygiel.tex}
+%\input{ART_Heathcote/Heathcote_pu.tex}
+\input{ART_Krzanowski/Krzanowski.tex}
 %\input{ART_Leciejewski/Leciejewski.tex}
 %\input{ART_Polak/Polak.tex}
 %\input{ART_Sierotowicz/Sierotowicz.tex}
