@@ -1271,7 +1271,28 @@ backend=biber]{biblatex}
 \makeatother
 \setlength\epigraphrule{0pt}
 \setlength\epitextskip{.1ex}
-\setlength\epigraphwidth{.5\textwidth}
+\setlength\epigraphwidth{.8\textwidth}
+
+
+\usepackage{mdframed}
+
+\usepackage{mdframed}
+
+% Define a new environment for the epigraph
+\newenvironment{customepigraph}
+  {% Begin code
+   \begin{mdframed}[%
+   linewidth=0pt,
+   skipabove=\baselineskip,
+   skipbelow=\baselineskip,
+   innerleftmargin=0.2\textwidth,
+   innerrightmargin=0\textwidth]
+   \footnotesize
+  }
+  {% End code
+   \end{mdframed}
+  }
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1348,8 +1369,8 @@ backend=biber]{biblatex}
 %\input{ART_Grygiel/Grygiel.tex}
 %\input{ART_Heathcote/Heathcote_pu.tex}
 %\input{ART_Krzanowski/Krzanowski.tex}
-\input{ART_Leciejewski/Leciejewski.tex}
-%\input{ART_Polak/Polak.tex}
+%\input{ART_Leciejewski/Leciejewski.tex}
+\input{ART_Polak/Polak.tex}
 %\input{ART_Sierotowicz/Sierotowicz.tex}
 %\input{ART_Tambassi/Tambassi.tex}
 %\input{ART_Trombik/Trombik.tex}
