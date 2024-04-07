@@ -1,80 +1,29 @@
-\setcounter{secnumdepth}{0}
+\begin{artengenv}{Timothy Tambassi}
+	{For the sake of simplicity: Applying software design parsimony to the content of information system ontologies}
+	{For the sake of simplicity\ldots}
+	{For the sake of simplicity: Applying software design parsimony to the content of information system ontologies}
+	{Ca' Foscari University of Venice}
+	{Although many information system ontologies [ISOs] claim to be parsimonious, the notion of parsimony\textcolor{red}{ }seems to influence the debate on ISOs only at the level of vague and uncritical assumption. To challenge this trend, the paper aims to clarify what it means for ISOs to be parsimonious. Specifically, Sect. 2 shows that parsimony in computer science generally concerns software design and, together with elegance, is one of the two aspects of the broader notion of simplicity. Sect. 3 transforms the main claims of parsimony in software design into claims about the content of ISOs, the combination of which is hereafter called ``parsimony of content''---where ``content'' refers only to the content of ISOs. Sects. 4-7 discuss the application of this parsimony to the design of ISOs, and outline different kinds (and combinations) of parsimony of content. Finally, section 8 considers whether parsimony of content could provide some criteria both for selecting and/or classifying the contents of ISOs and for choosing between different and equally consistent ISOs.
+	}
+	{information system ontologies, ontological aims, parsimony, representation primitives, simplicity.}
 
-
-
-\newcounter{saveenum}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\begin{document}
-
-\section{For the Sake of Simplicity: Applying Software Design Parsimony to the Content of Information System Ontologies}
-
-Timothy Tambassi
-
-
-
-Ca' Foscari University of Venice
-
-
-
-\textbf{\textcolor{black}{Abstract}}
-
-
-
-Although many information system ontologies [ISOs] claim to be parsimonious, the notion of parsimony\textcolor{red}{ }seems to influence the debate on ISOs only at the level of vague and uncritical assumption. To challenge this trend, the paper aims to clarify what it means for ISOs to be parsimonious. Specifically, Sect. 2 shows that parsimony in computer science generally concerns software design and, together with elegance, is one of the two aspects of the broader notion of simplicity. Sect. 3 transforms the main claims of parsimony in software design into claims about the content of ISOs, the combination of which is hereafter called ``parsimony of content'' -- where ``content'' refers only to the content of ISOs. Sects. 4-7 discuss the application of this parsimony to the design of ISOs, and outline different kinds (and combinations) of parsimony of content. Finally, section 8 considers whether parsimony of content could provide some criteria both for selecting and/or classifying the contents of ISOs and for choosing between different and equally consistent ISOs.
-
-
-
-\textbf{\textcolor{black}{Key words. }}\textcolor{black}{Information system ontologies, Ontological aims, Parsimony, Representation primitives, Simplicity}
-
-
-
-There are two ways of constructing a~software design:
-
-
-
-
-
+\begin{customepigraph}
+\textit{There are two ways of constructing a~software design:
 one way is to make it so simple that there are obviously no deficiencies,
-
-
-
-
-
 and the other way is to make it so complicated that there are no obvious deficiencies.
-
-
-
-
-
+} \\
 Tony Hoare (1980)
+\end{customepigraph}
 
 
-
-
+\newcounter{saveenumtambassi}
 
 \section{Introduction}
 
-\textcolor{black}{According to Turner }\label{ref:RNDV1PAblDjhO}\textcolor{black}{(2018)}\textcolor{black}{, there are two methodological advantages to adopting }\textcolor{black}{parsimony in software design}\textcolor{black}{:}
+According to Turner 
+%\label{ref:RNDV1PAblDjhO}(2018),
+\parencite*[][]{turner_computational_2018}, %
+ there are two methodological advantages to adopting parsimony in software design:
 
 
 
@@ -93,11 +42,17 @@ Tony Hoare (1980)
 
 
 
-\textcolor{black}{Acknowledging such advantages, however, does not imply that the adoption of }\textcolor{black}{parsimony }\textcolor{black}{is mandatory. Indeed, in speaking of information system ontologies [ISOs], Smith }\label{ref:RNDXcl4PsYojm}\textcolor{black}{(2004)}\textcolor{black}{ and Grenon }\label{ref:RNDukQSlXBJb6}\textcolor{black}{(2008)}\textcolor{black}{ remark that nothing prevents ISOs from: }
+Acknowledging such advantages, however, does not imply that the adoption of parsimony is mandatory. Indeed, in speaking of information system ontologies [ISOs], Smith 
+%\label{ref:RNDXcl4PsYojm}(2004)
+\parencite*[][]{floridi_ontology_2004} %
+ and Grenon 
+%\label{ref:RNDukQSlXBJb6}(2008)
+\parencite*[][]{munn_primer_2008} %
+ remark that nothing prevents ISOs from:
 
 
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
 \item endorsing/rejecting different assumptions,
 
@@ -107,13 +62,28 @@ Tony Hoare (1980)
 
 \end{enumerate}
 
-Despite [1–3], the adoption of parsimony is so common for ISOs that many ISOs implicitly and uncritically assume this notion. To prevent parsimony from influencing the debate on ISOs at the level of an implicit and uncritical assumption,\textcolor{red}{ }this paper aims to clarify what it means for ISOs to be parsimonious. Sect. 2 shows that parsimony in computer science generally concerns software design and, together with elegance, is one of the two aspects of the broader notion of simplicity. Sect. 3 transforms the main claims of parsimony in software design into two claims about the contents of ISOs, the combination of which is hereafter called ``parsimony of content'' -- where ``contents'' refers only to the contents of ISOs. Sects. 4–7 discuss the application of this parsimony to the design of ISOs, and outline different kinds (and combinations) of parsimony of content. Finally, Sect. 8 considers whether parsimony of content could provide some criteria both for selecting and/or classifying the contents of ISOs and for choosing between different and equally consistent ISOs.
+Despite [1–3], the adoption of parsimony is so common for ISOs that many ISOs implicitly and uncritically assume this notion. To prevent parsimony from influencing the debate on ISOs at the level of an implicit and uncritical assumption, this paper aims to clarify what it means for ISOs to be parsimonious. Sect. 2 shows that parsimony in computer science generally concerns software design and, together with elegance, is one of the two aspects of the broader notion of simplicity. Sect. 3 transforms the main claims of parsimony in software design into two claims about the contents of ISOs, the combination of which is hereafter called ``parsimony of content''---where ``contents'' refers only to the contents of ISOs. Sects. 4–7 discuss the application of this parsimony to the design of ISOs, and outline different kinds (and combinations) of parsimony of content. Finally, Sect. 8 considers whether parsimony of content could provide some criteria both for selecting and/or classifying the contents of ISOs and for choosing between different and equally consistent ISOs.
 
 
 
 \section{Parsimony in software design}
 
-\textcolor{black}{One of the main reasons why computer scien}tists place simplicity at the core of good and/or successful software design\footnote{\textrm{ On }\textrm{software design}\textrm{, see Allen }\label{ref:RNDu7LGVjHRhr}\textrm{(1997)}\textrm{; Baljon }\label{ref:RNDjD9j6SQGDR}\textrm{(2002)}\textrm{; Parsons }\label{ref:RNDjLVRqmMj5I}\textrm{(2015)}\textrm{.}} is that simplicity contributes to the transparency and reliability of the design.\footnote{\textrm{ On simplicity in software design, see also Wirth }\label{ref:RND5FbOktAkkg}\textrm{(1974)}\textrm{; Dijkstra }\label{ref:RNDcl3gE1ch0O}\textrm{(1979)}\textrm{.}} According to Turner 
+One of the main reasons why computer scientists place simplicity at the core of good and/or successful software design\footnote{On software design, see Allen 
+%\label{ref:RNDu7LGVjHRhr}(1997);
+\parencite*[][]{allen_formal_1997}; %
+ Baljon 
+%\label{ref:RNDjD9j6SQGDR}(2002);
+\parencite*[][]{baljon_history_2002}; %
+ Parsons 
+%\label{ref:RNDjLVRqmMj5I}(2015).
+\parencite*[][]{parsons_philosophy_2015}.%
+} is that simplicity contributes to the transparency and reliability of the design.\footnote{On simplicity in software design, see also Wirth 
+%\label{ref:RND5FbOktAkkg}(1974);
+\parencite*[][]{wirth_design_1974}; %
+ Dijkstra 
+%\label{ref:RNDcl3gE1ch0O}(1979).
+\parencite*[][]{yourdon_humble_1979}.%
+} According to Turner 
 %\label{ref:RNDQC3jZenQTm}(2018, pp.133–134),
 \parencite*[][pp.133–134]{turner_computational_2018}, %
  simplicity does not have a~single meaning in this context; rather, it refers to two distinct and related notions: elegance (or syntactic simplicity) and parsimony (or ontological simplicity).\footnote{See also Baker 
@@ -125,13 +95,13 @@ Despite [1–3], the adoption of parsimony is so common for ISOs that many ISOs 
 
 Elegance generally concerns the graspability, clarity, transparency, correctness, efficiency, consistency, generality, uniformity, and explanatory power of software.\footnote{On elegance in software design, see Bentley and McIroy 
 %\label{ref:RNDjjKxjSNemy}(1993);
-\parencite*[][]{}; %
+\parencite*[][]{bentley_engineering_1993}; %
  Gelernter 
 %\label{ref:RND7590bTYUus}(1998);
 \parencite*[][]{gelernter_machine_1998}; %
  Oram and Wilson 
 %\label{ref:RNDNOqSwpLxL7}(2007);
-\parencite*[][]{}; %
+\parencite*[][]{oram_beautiful_2007}; %
  Hill 
 %\label{ref:RNDzvJBzPQkXH}(2018);
 \parencite*[][]{de_mol_elegance_2018}; %
@@ -151,11 +121,11 @@ Elegance generally concerns the graspability, clarity, transparency, correctness
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item software solutions do not go beyond \textit{what is required}.
 
@@ -165,11 +135,11 @@ While Turner further specifies the meaning of ``what is required'' in [4] by cla
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item software should solve the problem it aims to solve, but no more,
 
@@ -182,11 +152,11 @@ Pawson
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item parsimony to have been achieved when it is no longer possible to improve software by subtraction.
 
@@ -194,13 +164,13 @@ Pawson
 
 Then, he adds that
 
+\enlargethispage{1.5\baselineskip}
 
-
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
 \begin{enumerate}
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item parsimony is the quality that software applications have when their components, details, and junctions have been reduced to the essential.
 
@@ -210,11 +180,11 @@ Then, he adds that
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item the link between the design and the aims of software (see [4–5]) also concerns the components, details, and junctions of the software.
 
@@ -224,11 +194,11 @@ Then, he adds that
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item parsimony concerns the [9.1] aims of software and [9.2] its components, details, and junctions.
 
@@ -238,13 +208,13 @@ Then, he adds that
 
 Section 2 has shown that:
 
+\enlargethispage{1.5\baselineskip}
 
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\setcounter{saveenum}{\value{enumi}}
+\begin{enumerate}[label={[\arabic*]}]
 
-\begin{enumerate}
-
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item simplicity is at the core of good and/or successful software design;
 
@@ -256,11 +226,11 @@ Turner (2018, p. 128) adds that
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item design is everywhere in computer science.
 
@@ -277,40 +247,119 @@ Gruber
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
-\item ISOs are sets of representational primitives (henceforth, primitives) with which to model a~domain (of knowledge).\footnote{\textrm{ For further (and competing) definitions of ISO, see Neches et al. }\label{ref:RNDs79Rw3smTh}\textrm{(1991)}\textrm{; Gruber }\label{ref:RNDulDWUalQHD}\textrm{(1993)}\textrm{; Guarino and Giaretta }\label{ref:RNDNc93EP1veQ}\textrm{(1995)}\textrm{; Bernaras et al. }\label{ref:RNDyJd8BX2iSu}\textrm{(1996)}\textrm{; Borst }\label{ref:RNDFOBsz9JegY}\textrm{(1997)}\textrm{; Swartout et al. }\label{ref:RNDZWeg7QpVjT}\textrm{(1997)}\textrm{; Studer et al. }\label{ref:RNDDSELqzHVKQ}\textrm{(1998)}\textrm{; Guarino }\label{ref:RNDUOi3fhFvwb}\textrm{(1998)}\textrm{; Uschold and Jasper }\label{ref:RNDtVnvyrP1Mw}\textrm{(1999)}\textrm{; Sowa }\label{ref:RNDkevWbfYmM7}\textrm{(2005)}\textrm{; Noy and McGuinness }\label{ref:RNDCZq17toNhF}\textrm{(2003)}\textrm{; Tambassi and Magro }\label{ref:RNDrJpx0AqoZM}\textrm{(2015)}\textrm{. Gruber }\label{ref:RNDciyDRYg1al}\textrm{(2009, p.1964)}\textrm{ has also affirmed that ISOs, or ``ontologies'', are artefacts specified by (ontological) languages. Before him, Guarino and Giaretta }\label{ref:RNDPAWMiYAUY8}\textrm{(1995)}\textrm{ have pointed out that ``ontology'' in computer science has (at least) two different meanings: the artefact and the philosophical discipline -- which finds direct application in computer science (see, for example, Turner }\label{ref:RNDEIxMrfnX5h}\textrm{(2018)}\textrm{; Krzanowski and Polak }\label{ref:RND4FPWHBdLXS}\textrm{(2022)}\textrm{). This explains why ``ontology'' can have the same meaning in both philosophy and computer science. }} Primitives are primarily instances, classes, properties, and relations.\footnote{\textrm{ Instances are the lowest-level components, the basic units, of ISOs }\label{ref:RNDdr97C4EV5N}\textrm{(Laurini, 2017)}\textrm{. Classes, which may contain sub-classes and/or be sub-classes of other classes, are sets of instances that share common features }\label{ref:RNDBg41DF7QTa}\textrm{(Jaziri and Gargouri, 2010)}\textrm{. Properties describe the various features of a~class and of its instances }\label{ref:RNDO5jcCKaTQ1}\textrm{(Noy and McGuinness, 2003; Jaziri and Gargouri, 2010)}\textrm{. Relations represent the way in which both classes and instances interact with each other }\label{ref:RNDhcWtvdFqLf}\textrm{(Laurini, 2017)}\textrm{. On primitives, see also Tambassi }\label{ref:RNDR0Py0GAbHa}\textrm{(Tambassi, 2021)}\textrm{.}}
+\item ISOs are sets of representational primitives (henceforth, primitives) with which to model a~domain (of knowledge).\footnote{For further (and competing) definitions of ISO, see Neches et al. 
+%\label{ref:RNDs79Rw3smTh}(1991);
+\parencite*[][]{neches_enabling_1991}; %
+ Gruber 
+%\label{ref:RNDulDWUalQHD}(1993);
+\parencite*[][]{gruber_translation_1993}; %
+ Guarino and Giaretta 
+%\label{ref:RNDNc93EP1veQ}(1995);
+\parencite*[][]{guarino_ontologies_1995}; %
+ Bernaras et al. 
+%\label{ref:RNDyJd8BX2iSu}(1996);
+\parencite*[][]{bernaras_building_1996}; %
+ Borst 
+%\label{ref:RNDFOBsz9JegY}(1997);
+\parencite*[][]{borst_construction_1997}; %
+ Swartout et al. 
+%\label{ref:RNDZWeg7QpVjT}(1997);
+\parencite*[][]{swartout_toward_1997}; %
+ Studer et al. 
+%\label{ref:RNDDSELqzHVKQ}(1998);
+\parencite*[][]{studer_knowledge_1998}; %
+ Guarino 
+%\label{ref:RNDUOi3fhFvwb}(1998);
+\parencite*[][]{guarino_formal_1998}; %
+ Uschold and Jasper 
+%\label{ref:RNDtVnvyrP1Mw}(1999);
+\parencite*[][]{uschold_framework_1999}; %
+ Sowa 
+%\label{ref:RNDkevWbfYmM7}(2005);
+\parencite*[][]{sowa_guided_2005}; %
+ Noy and McGuinness 
+%\label{ref:RNDCZq17toNhF}(2003);
+\parencite*[][]{noy_ontology_2003}; %
+ Tambassi and Magro 
+%\label{ref:RNDrJpx0AqoZM}(2015).
+\parencite*[][]{tambassi_ontologie_2015}. %
+ Gruber 
+%\label{ref:RNDciyDRYg1al}(2009, p.1964)
+\parencite*[][p.1964]{liu_ontology_2009} %
+ has also affirmed that ISOs, or ``ontologies'', are artefacts specified by (ontological) languages. Before him, Guarino and Giaretta 
+%\label{ref:RNDPAWMiYAUY8}(1995)
+\parencite*[][]{guarino_ontologies_1995} %
+ have pointed out that ``ontology'' in computer science has (at least) two different meanings: the artefact and the philosophical discipline---which finds direct application in computer science (see, for example, Turner 
+%\label{ref:RNDEIxMrfnX5h}(2018);
+\parencite*[][]{turner_computational_2018}; %
+ Krzanowski and Polak 
+%\label{ref:RND4FPWHBdLXS}(2022)
+\parencite*[][]{krzanowski_meta-ontology_2022}%
+). This explains why ``ontology'' can have the same meaning in both philosophy and computer science. } Primitives are primarily instances, classes, properties, and relations.\footnotemark
 
 \end{enumerate}
 
 Therefore, based on [4–9], applying parsimony (of software design) to [13] means that:
 
+\setcounter{saveenumtambassi}{\value{enumi}}
 
+\begin{enumerate}[label={[\arabic*]}]
 
-\begin{enumerate}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
-\item ISOs should not go beyond the problem(s) they aim to solve (see [4–5] and [9.1]) -- that is, beyond the domain(s) (of knowledge) ISOs aim to model;
+\item ISOs should not go beyond the problem(s) they aim to solve (see [4–5] and [9.1])---that is, beyond the domain(s) (of knowledge) ISOs aim to model;
 
 \item the components, details and junctions of ISOs, that is the primitives of ISOs, should be reduced to the essential (see [6–7] and [9.2]).
 
 \end{enumerate}
 
-Henceforth, by ``parsimony of content'' (where ``content'' refers only to the contents of ISOs) I~will mean the application of [4–9] to [13], namely [14–15]. There are two main reasons for this emphasis on ``content'' -- rather than on ``parsimony of ISOs'' in the broader sense. The first reason is that, within the debate on ISOs, the notion of parsimony is chiefly associated with the content of primitives.\footnote{\textrm{ See Burgun et al. }\label{ref:RNDVwq8XaiFhH}\textrm{(1999)}\textrm{; Yao et al. }\label{ref:RNDLNiZPaJvJH}\textrm{(2011)}\textrm{; Motara and Van der Schiff }\label{ref:RNDOkvKiog8MQ}\textrm{(2019)}\textrm{; Partridge et al. }\label{ref:RND3xHRAkVhXC}\textrm{(2020)}\textrm{.}} Therefore, to speak of ``content'' in ``parsimony of content'' and ``primitives'' in [13] (i.e. according to Gruber's definition of ISO) means to account for this relation. The second reason is that parsimony of content does not (aspire to) exhaust the debate on the parsimony of ISOs. In other words, there may \textit{in principle} be other parsimonies involved in the ISOs debate, as well as other ways of applying [4–9] to ISOs. And this is also in line with [10–12], which do not rule out that parsimony could be ``everywhere'' in ISOs, and thus also apply to something other than the content of ISOs 
+\footnotetext{Instances are the lowest-level components, the basic units, of ISOs 
+%\label{ref:RNDdr97C4EV5N}(Laurini, 2017).
+\parencite[][]{laurini_geographic_2017}. %
+ Classes, which may contain sub-classes and/or be sub-classes of other classes, are sets of instances that share common features 
+%\label{ref:RNDBg41DF7QTa}(Jaziri and Gargouri, 2010).
+\parencite[][]{jaziri_ontology_2010}. %
+ Properties describe the various features of a~class and of its instances 
+%\label{ref:RNDO5jcCKaTQ1}(Noy and McGuinness, 2003; Jaziri and Gargouri, 2010).
+\parencites[][]{noy_ontology_2003}[][]{jaziri_ontology_2010}. %
+ Relations represent the way in which both classes and instances interact with each other 
+%\label{ref:RNDhcWtvdFqLf}(Laurini, 2017).
+\parencite[][]{laurini_geographic_2017}. %
+ On primitives, see also Tambassi 
+%\label{ref:RNDR0Py0GAbHa}(Tambassi, 2021).
+\parencite[][]{tambassi_philosophy_2021}.%
+}
+
+Henceforth, by ``parsimony of content'' (where ``content'' refers only to the contents of ISOs) I~will mean the application of [4–9] to [13], namely [14–15]. There are two main reasons for this emphasis on ``content''---rather than on ``parsimony of ISOs'' in the broader sense. The first reason is that, within the debate on ISOs, the notion of parsimony is chiefly associated with the content of primitives.\footnote{See Burgun et al. 
+%\label{ref:RNDVwq8XaiFhH}(1999);
+\parencite*[][]{burgun_sharing_1999}; %
+ Yao et al. 
+%\label{ref:RNDLNiZPaJvJH}(2011);
+\parencite*[][]{yao_benchmarking_2011}; %
+ Motara and Van der Schiff 
+%\label{ref:RNDOkvKiog8MQ}(2019);
+\parencite*[][]{motara_functional_2019}; %
+ Partridge et al. 
+%\label{ref:RND3xHRAkVhXC}(2020).
+\parencite*[][]{partridge_survey_2020}.%
+} Therefore, to speak of ``content'' in ``parsimony of content'' and ``primitives'' in [13] (i.e. according to Gruber's definition of ISO) means to account for this relation. The second reason is that parsimony of content does not (aspire to) exhaust the debate on the parsimony of ISOs. In other words, there may \textit{in principle} be other parsimonies involved in the ISOs debate, as well as other ways of applying [4–9] to ISOs. And this is also in line with [10–12], which do not rule out that parsimony could be ``everywhere'' in ISOs, and thus also apply to something other than the content of ISOs 
 %\label{ref:RNDquisra6ZW5}(Turner, 2018, pp.161–167).
 \parencite[][pp.161–167]{turner_computational_2018}. %
  Moreover, although it would transitively follow from [8–9] that
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item parsimony of content deals with \textit{both} [14–15],
 
@@ -320,7 +369,11 @@ we should also consider the possibility of
 
 
 
-\begin{enumerate}
+\setcounter{saveenumtambassi}{\value{enumi}}
+
+\begin{enumerate}[label={[\arabic*]}]
+
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item following [14–15] separately.
 
@@ -336,7 +389,11 @@ To specify what it means to adopt parsimony of content in practice, suppose we b
 
 
 
-\begin{enumerate}
+\setcounter{saveenumtambassi}{\value{enumi}}
+
+\begin{enumerate}[label={[\arabic*]}]
+
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item no river in the UK is excluded from \textit{ISO}\textit{\textsubscript{1}},
 
@@ -346,11 +403,11 @@ whereas achieving \textit{A}\textit{\textsubscript{2}} means
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item providing any classification of such rivers.
 
@@ -360,13 +417,13 @@ whereas achieving \textit{A}\textit{\textsubscript{2}} means
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
-\item the contents of an ISO should be exhaustive\footnote{\textrm{ See Tambassi (2021b). ``Exhaustive'' in [20] also refers to the debate on categories in philosophy, within which ``exhaustive'' represents one of the three criteria of adequacy (see Cumpa 2019), indicating that whatever there is (or could be) should find its place in one and only one category (see Thomasson 2019). }} with respect to the domain that the ISO aims to model.
+\item the contents of an ISO should be exhaustive\footnote{See Tambassi (2021b). ``Exhaustive'' in [20] also refers to the debate on categories in philosophy, within which ``exhaustive'' represents one of the three criteria of adequacy (see Cumpa 2019), indicating that whatever there is (or could be) should find its place in one and only one category (see Thomasson 2019). } with respect to the domain that the ISO aims to model.
 
 \end{enumerate}
 
@@ -378,11 +435,11 @@ As for [19], \textit{A}\textit{\textsubscript{2}} can in principle be achieved i
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item classify the rivers according to their biotic and/or topographic features;
 
@@ -406,11 +463,11 @@ According to [14–15], applying parsimony of content to \textit{ISO}\textit{\te
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item \textit{ISO}\textit{\textsubscript{1}} should not go beyond its aims;
 
@@ -422,11 +479,11 @@ As for [26], \textit{ISO}\textit{\textsubscript{1}} has two aims: \textit{A}\tex
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item list all the UK's rivers (see \textit{A}\textit{\textsubscript{1}}),
 
@@ -440,11 +497,11 @@ As for [26], \textit{ISO}\textit{\textsubscript{1}} has two aims: \textit{A}\tex
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item list the UK's lakes,
 
@@ -456,11 +513,11 @@ because [31–32] would go beyond \textit{A}\textit{\textsubscript{1}} and \text
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item (all) \textit{ISO}\textit{\textsubscript{1}}'s contents should be consistent with and functional to its aims,
 
@@ -470,11 +527,11 @@ but also that
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item no content of \textit{ISO}\textit{\textsubscript{1}} should go beyond the aims of \textit{ISO}\textit{\textsubscript{1}}.
 
@@ -486,15 +543,15 @@ However, things can get complicated in cases like the following. Suppose we fulf
 
 \section{Completeness and parsimony of content}
 
-The principle of completeness \textcolor{black}{(of ISOs) states that }the contents of an ISO should be exhaustive for the domain that the ISO aims to model (see [20]). Applying completeness to (\textit{ISO}\textit{\textsubscript{1}}\textcolor{black}{'s)} \textit{A}\textit{\textsubscript{1}} implies [14], but does not exclude that:
+The principle of completeness (of ISOs) states that the contents of an ISO should be exhaustive for the domain that the ISO aims to model (see [20]). Applying completeness to (\textit{ISO}\textit{\textsubscript{1}}'s) \textit{A}\textit{\textsubscript{1}} implies [14], but does not exclude that:
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item the same river appears twice (or several times) in \textit{ISO}\textit{\textsubscript{1}},
 
@@ -502,15 +559,15 @@ The principle of completeness \textcolor{black}{(of ISOs) states that }the conte
 
 \end{enumerate}
 
-\textcolor{black}{Conversely, applying }parsimony of content to \textit{A}\textit{\textsubscript{1}} implies [18], but excludes [36] because of [33–34] -- which are ultimately inferred from [26]. From [36], however, it does not follow that completeness and parsimony of content are mutually contradictory, since:
+Conversely, applying parsimony of content to \textit{A}\textit{\textsubscript{1}} implies [18], but excludes [36] because of [33–34]---which are ultimately inferred from [26]. From [36], however, it does not follow that completeness and parsimony of content are mutually contradictory, since:
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item ISOs may consistently follow both completeness and parsimony of content (see [1]).
 
@@ -520,25 +577,25 @@ To justify [37], we could consider the negation of [36] to be only a~possibility
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item how does the negation of [35] follow from parsimony of content?
 
 \end{enumerate}
 
-To answer [\textcolor{black}{38], let us return to [27], according to which} \textit{ISO}\textit{\textsubscript{1}}\textcolor{black}{'s }primitives \textcolor{black}{should be reduced to the essential. If [27], an (easy) s}olution might be to avoid repetitions, so that
+To answer [38], let us return to [27], according to which \textit{ISO}\textit{\textsubscript{1}}'s primitives should be reduced to the essential. If [27], an (easy) solution might be to avoid repetitions, so that
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item each content of an ISO should appear only once in the same ISO.
 
@@ -550,29 +607,45 @@ Now, [39] is based on [27], which follows from [15], which in turn is one of the
 
 \section{Parsimony of content and (representational) primitives}
 
-While [39] follows from [27], this is not all. Indeed, ``\textit{ISO}\textit{\textsubscript{1}}'s primitives should be reduced to the essential'' \textcolor{black}{seems to be open to different interpretations, such as:}
+While [39] follows from [27], this is not all. Indeed, ``\textit{ISO}\textit{\textsubscript{1}}'s primitives should be reduced to the essential'' seems to be open to different interpretations, such as:
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
-\item \textcolor{black}{reducing the types of the }primitives \textcolor{black}{we use }\textcolor{black}{(to the essential)}\textcolor{black}{;}
+\item reducing the types of the primitives we use (to the essential);
 
-\item \textcolor{black}{reducing the tokens of the }primitives \textcolor{black}{we use (to }the\textcolor{black}{ essential);}\footnotetext{\textrm{ The distinction between [40] and [41] is largely based on Fiddaman and Rodriguez-Pereyra }\label{ref:RND3nV9UetV8V}\textrm{(2018)}\textrm{'s distinction between two different forms of ontological economy. According to the authors, the principle of qualitative economy requires us to avoid multiplying types of entities when not necessary, while that of quantitative economy requires us to avoid multiplying token entities when not necessary. For further reading on ontological economy, see Sober }\label{ref:RNDG9yseufJnE}\textrm{(1975)}\textrm{, Lewis }\label{ref:RNDS0R1896DZL}\textrm{(1973)}\textrm{, van Inwagen }\label{ref:RNDPFpyRoLDbH}\textrm{(2001)}\textrm{, Lando }\label{ref:RNDJwWAkM47VD}\textrm{(2010)}\textrm{, and Schaffer }\label{ref:RNDme5rBj5rmm}\textrm{(2015)}\textrm{.}}
+\item reducing the tokens of the primitives we use (to the essential);\footnote{The distinction between [40] and [41] is largely based on Fiddaman and Rodriguez-Pereyra 
+%\label{ref:RND3nV9UetV8V}(2018)
+\parencite*[][]{fiddaman_razor_2018}%
+'s distinction between two different forms of ontological economy. According to the authors, the principle of qualitative economy requires us to avoid multiplying types of entities when not necessary, while that of quantitative economy requires us to avoid multiplying token entities when not necessary. For further reading on ontological economy, see Sober 
+%\label{ref:RNDG9yseufJnE}(1975),
+\parencite*[][]{sober_simplicity_1975}, %
+ Lewis 
+%\label{ref:RNDS0R1896DZL}(1973),
+\parencite*[][]{lewis_counterfactuals_1973}, %
+ van Inwagen 
+%\label{ref:RNDPFpyRoLDbH}(2001),
+\parencite*[][]{van_inwagen_ontology_2001}, %
+ Lando 
+%\label{ref:RNDJwWAkM47VD}(2010),
+\parencite*[][]{lando_ontologia_2010}, %
+ and Schaffer 
+%\label{ref:RNDme5rBj5rmm}(2015).
+\parencite*[][]{schaffer_what_2015}.%
+}
 
 
-
-\item {\color{black}
-
-combining [40] and [41].
+\item combining [40] and [41].
 
 \end{enumerate}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\textcolor{black}{To explain [40–42], let us }imagine\textcolor{black}{ that }\textit{ISO}\textit{\textsubscript{1}} \textcolor{black}{follows [23] and thus }classifies all the UK's rivers according to some (arbitrary) length intervals. \textit{ISO}\textit{\textsubscript{1}}\textit{\textcolor[rgb]{0.1254902,0.12941177,0.14117648}{ }}\textit{\textcolor[rgb]{0.1254902,0.12941177,0.14117648}{${\wedge}$}} \textit{[23]} therefore has two aims: (\textit{A}\textit{\textsubscript{3}}) to list all the UK's rivers and (\textit{A}\textit{\textsubscript{4}}) to classify them according to [23].
+To explain [40–42], let us imagine that \textit{ISO}\textit{\textsubscript{1}} follows [23] and thus classifies all the UK's rivers according to some (arbitrary) length intervals. \textit{ISO}\textit{\textsubscript{1}}\textit{\textcolor[rgb]{0.1254902,0.12941177,0.14117648}{ }}\textit{\textcolor[rgb]{0.1254902,0.12941177,0.14117648}{${\wedge}$}} \textit{[23]} therefore has two aims: (\textit{A}\textit{\textsubscript{3}}) to list all the UK's rivers and (\textit{A}\textit{\textsubscript{4}}) to classify them according to [23].
 
 
 
@@ -583,14 +656,15 @@ Now, [40] suggests reducing the types of primitives: using fewer primitive types
 [41] is instead ambiguous. It may refer to
 
 
+\begin{enumerate}[label={[\arabic*]}]
 
-\begin{enumerate}
 
-\item an ISO's overall amount of tokens,
+
+\item [{[41.1]}] an ISO's overall amount of tokens,
 
 \end{enumerate}
 
-\textcolor{black}{meaning that the tokens of }\textit{ISO}\textit{\textsubscript{1}} \textit{${\wedge}$ [23]}\textcolor{black}{ should be reduced to the essential. Now, while }\textit{A}\textit{\textsubscript{3}} (simply) requires that all of the nearly 1,500 rivers crossing the UK find their place among the contents of \textit{ISO}\textit{\textsubscript{1}} \textit{\textcolor[rgb]{0.1254902,0.12941177,0.14117648}{${\wedge}$}} \textit{[23]} (for example, among the instances of \textit{ISO}\textit{\textsubscript{1}} \textit{\textcolor[rgb]{0.1254902,0.12941177,0.14117648}{${\wedge}$}} \textit{[23]}), \textit{A}\textit{\textsubscript{4}} might be fulfilled in different ways. Supposing, for example, that each length interval corresponds to a~class of \textit{ISO}\textit{\textsubscript{1}} \textit{\textcolor[rgb]{0.1254902,0.12941177,0.14117648}{${\wedge}$}} \textit{[23]}, [41.1] suggests that [\textit{S}\textit{\textsubscript{3}}] classifying the UK's rivers by means of two length intervals (e.g., ``longer than 100 miles'' and ``shorter than 100 miles'') is preferable to [\textit{S}\textit{\textsubscript{4}}] classifying those rivers by means of five length intervals (e.g., ``between 0–30 miles'', ``between 40–80 miles'', ``between 80–120 miles'', and so forth). Why so? Because \textit{S}\textit{\textsubscript{3}} requires (almost) 1,500 instances and 2 classes, 1,502 tokens in total, whereas \textit{S}\textit{\textsubscript{4}} requires (almost) 1,500 instances and 5 classes, 1,505 tokens in total. (This also means that, insofar as \textit{S}\textit{\textsubscript{3}} and \textit{S}\textit{\textsubscript{4}} are both consistent with the aims of \textit{ISO}\textit{\textsubscript{1}} \textit{\textcolor[rgb]{0.1254902,0.12941177,0.14117648}{${\wedge}$}} \textit{[23]}, it is irrelevant to [41.1] whether \textit{S}\textit{\textsubscript{4}} is more detailed than \textit{S}\textit{\textsubscript{3}}). But [41.1] also represents a~way of balancing the overall tokens of \textit{ISO}\textit{\textsubscript{1}} \textit{${\wedge}$ [23]} within the various primitives. For example, if achieving \textit{A}\textit{\textsubscript{3}} and \textit{A}\textit{\textsubscript{4}} required that \textit{S}\textit{\textsubscript{3}} also include 10 properties and \textit{S}\textit{\textsubscript{4}} includes 2 properties, then \textit{S}\textit{\textsubscript{4}} would be preferable to \textit{S}\textit{\textsubscript{3}}. In other words, the reduction of tokens within one primitive should not be at the expense of a~proliferation of tokens within the whole ISO.
+meaning that the tokens of \textit{ISO}\textit{\textsubscript{1}} \textit{${\wedge}$ [23]} should be reduced to the essential. Now, while \textit{A}\textit{\textsubscript{3}} (simply) requires that all of the nearly 1,500 rivers crossing the UK find their place among the contents of \textit{ISO}\textit{\textsubscript{1}} \textit{\textcolor[rgb]{0.1254902,0.12941177,0.14117648}{${\wedge}$}} \textit{[23]} (for example, among the instances of \textit{ISO}\textit{\textsubscript{1}} \textit{\textcolor[rgb]{0.1254902,0.12941177,0.14117648}{${\wedge}$}} \textit{[23]}), \textit{A}\textit{\textsubscript{4}} might be fulfilled in different ways. Supposing, for example, that each length interval corresponds to a~class of \textit{ISO}\textit{\textsubscript{1}} \textit{\textcolor[rgb]{0.1254902,0.12941177,0.14117648}{${\wedge}$}} \textit{[23]}, [41.1] suggests that [\textit{S}\textit{\textsubscript{3}}] classifying the UK's rivers by means of two length intervals (e.g., ``longer than 100 miles'' and ``shorter than 100 miles'') is preferable to [\textit{S}\textit{\textsubscript{4}}] classifying those rivers by means of five length intervals (e.g., ``between 0–30 miles'', ``between 40–80 miles'', ``between 80–120 miles'', and so forth). Why so? Because \textit{S}\textit{\textsubscript{3}} requires (almost) 1,500 instances and 2 classes, 1,502 tokens in total, whereas \textit{S}\textit{\textsubscript{4}} requires (almost) 1,500 instances and 5 classes, 1,505 tokens in total. (This also means that, insofar as \textit{S}\textit{\textsubscript{3}} and \textit{S}\textit{\textsubscript{4}} are both consistent with the aims of \textit{ISO}\textit{\textsubscript{1}} \textit{\textcolor[rgb]{0.1254902,0.12941177,0.14117648}{${\wedge}$}} \textit{[23]}, it is irrelevant to [41.1] whether \textit{S}\textit{\textsubscript{4}} is more detailed than \textit{S}\textit{\textsubscript{3}}). But [41.1] also represents a~way of balancing the overall tokens of \textit{ISO}\textit{\textsubscript{1}} \textit{${\wedge}$ [23]} within the various primitives. For example, if achieving \textit{A}\textit{\textsubscript{3}} and \textit{A}\textit{\textsubscript{4}} required that \textit{S}\textit{\textsubscript{3}} also include 10 properties and \textit{S}\textit{\textsubscript{4}} includes 2 properties, then \textit{S}\textit{\textsubscript{4}} would be preferable to \textit{S}\textit{\textsubscript{3}}. In other words, the reduction of tokens within one primitive should not be at the expense of a~proliferation of tokens within the whole ISO.
 
 
 
@@ -598,13 +672,13 @@ Now, [40] suggests reducing the types of primitives: using fewer primitive types
 
 
 
-\setcounter{saveenum}{\value{enumi}}
 
-\begin{enumerate}
 
-\setcounter{enumi}{\value{saveenum}}
+\begin{enumerate}[label={[\arabic*]}]
 
-\item the tokens of each primitive.
+
+
+\item [{[41.2]}] the tokens of each primitive.
 
 \end{enumerate}
 
@@ -612,13 +686,17 @@ In turn, [41.2] could have two interpretations: [41.2.1] and [41.2.2]. [41.2.1] 
 
 
 
-\textcolor{black}{However, there are also }ambiguities\textcolor{black}{ surrounding [42]. Firstly, it is unclear whether }
+However, there are also ambiguities surrounding [42]. Firstly, it is unclear whether
 
 
 
-\begin{enumerate}
+%\setcounter{saveenumtambassi}{\value{enumi}}
 
-\item \textcolor{black}{the combination }refers\textcolor{black}{ to [40] and [41.1], or }\textcolor{black}{[40] and }\textcolor{black}{[41.2.1]}\textcolor{black}{, or [40] and [41.2.2], or [40], [41.1], and [41.2.1], and so on. }
+\begin{enumerate}[label={[\arabic*]}]
+
+\setcounter{enumi}{\value{saveenumtambassi}}
+
+\item the combination refers to [40] and [41.1], or [40] and [41.2.1], or [40] and [41.2.2], or [40], [41.1], and [41.2.1], and so on.
 
 \end{enumerate}
 
@@ -626,15 +704,13 @@ Secondly,
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
-\item {\color{black}
-
-once [43] is clarified, we should also define the order of priority of the combination.
+\item once [43] is clarified, we should also define the order of priority of the combination.
 
 \end{enumerate}
 
@@ -652,13 +728,13 @@ On this basis, let us focus on \textit{ISO}\textit{\textsubscript{1}}'s \textit{
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
-\item [21–25] as \textit{equally} \textit{consistent} with \textit{A}\textit{\textsubscript{2}}.
+\item {[21–25]}  as \textit{equally} \textit{consistent} with \textit{A}\textit{\textsubscript{2}}.
 
 \end{enumerate}
 
@@ -666,11 +742,11 @@ But, if [45], how are we to choose among [21–25]? The fact that the criteria, 
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item choosing among [21–25] may both [46.1] (at least partially) depend \textit{and} [46.2] not depend on (some of) [14–16].
 
@@ -680,11 +756,11 @@ In turn, [46] does not imply or guarantee that
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item once we choose among [21–25], [14–16] provide criteria for selecting and/or classifying the contents of ISOs.
 
@@ -694,33 +770,35 @@ All this means that parsimony of content (in general) can provide:
 
 
 
-\setcounter{saveenum}{\value{enumi}}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
 
-\setcounter{enumi}{\value{saveenum}}
+\setcounter{enumi}{\value{saveenumtambassi}}
 
-\item some criteria \textcolor{black}{for choosing among different and equally consistent classifications}\textcolor{black}{/ISOs;}
+\item some criteria for choosing among different and equally consistent classifications/ISOs;
 
-\item some\textcolor{black}{ criteria for selecting and/or classifying the content of ISOs;}
+\item some criteria for selecting and/or classifying the content of ISOs;
 
-\item {\color{black}
+\item both [48] and [49];
 
-both [48] and [49];
-
-\item neither\textcolor{black}{ [48] nor [49].}
+\item neither [48] nor [49].
 
 \end{enumerate}
 
 \section{Concluding remarks }
 
-Since some ISOs adopt parsimony as an implicit and uncritical assumption, and/or without explaining what parsimony specifically consists of (or refers to), these pages sought to clarify the point. In this regard, \textcolor{black}{I~introduced the notion of parsimony of content, showing that }
+Since some ISOs adopt parsimony as an implicit and uncritical assumption, and/or without explaining what parsimony specifically consists of (or refers to), these pages sought to clarify the point. In this regard, I~introduced the notion of parsimony of content, showing that
 
 
 
-\begin{enumerate}
+\setcounter{saveenumtambassi}{\value{enumi}}
 
-\item \textcolor{black}{this parsimony }concerns\textcolor{black}{ two main claims, [}14–15], as well as their connection, [16], from which \textcolor{black}{[}33–34], [37], [39–40], [41.1], [41.2.1], [41.2.2], \textcolor{black}{[}43–44] and [48–51] follow.
+\begin{enumerate}[label={[\arabic*]}]
+
+\setcounter{enumi}{\value{saveenumtambassi}}
+
+\item this parsimony concerns two main claims, [14–15], as well as their connection, [16], from which [33–34], [37], [39–40], [41.1], [41.2.1], [41.2.2], [43–44] and [48–51] follow.
 
 \end{enumerate}
 
@@ -728,11 +806,18 @@ Since some ISOs adopt parsimony as an implicit and uncritical assumption, and/or
 
 
 
-\begin{enumerate}
+\setcounter{saveenumtambassi}{\value{enumi}}
+
+\begin{enumerate}[label={[\arabic*]}]
+
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item the interpretation and combination of claims about parsimony of content,
 
-\item specifying whether parsimony of content provides some criteria for choosing among different classifications\textcolor{black}{/ISOs and/or for} \textcolor{black}{selecting and/or classifying the contents of ISOs.}\footnotetext{\textrm{ Unlike some computer scientists }\label{ref:RNDYmGYe3RjMq}\textrm{(Floyd, 1967)}\textrm{, I~have not considered the possibility of combining parsimony of content with modularization: indeed, breaking down complex ISOs into (in)dependent modules would simply defer the question of adopting parsimony of content to both complex ISOs and their (in)dependent modules.}}
+\item specifying whether parsimony of content provides some criteria for choosing among different classifications/ISOs and/or for selecting and/or classifying the contents of ISOs.\footnote{Unlike some computer scientists 
+%\label{ref:RNDYmGYe3RjMq}(Floyd, 1967),
+\parencite[][]{floyd_assigning_1967}, %
+ I~have not considered the possibility of combining parsimony of content with modularization: indeed, breaking down complex ISOs into (in)dependent modules would simply defer the question of adopting parsimony of content to both complex ISOs and their (in)dependent modules.}
 
 
 
@@ -742,7 +827,11 @@ All this means that
 
 
 
-\begin{enumerate}
+\setcounter{saveenumtambassi}{\value{enumi}}
+
+\begin{enumerate}[label={[\arabic*]}]
+
+\setcounter{enumi}{\value{saveenumtambassi}}
 
 \item the notion (and application) of parsimony of content is multifaceted;
 
@@ -750,189 +839,14 @@ All this means that
 
 \end{enumerate}
 
-It does not follow from [55–56] that parsimony of content exhausts the debate on \textcolor{black}{the parsimony of ISOs, nor that ISOs are bound to adopt parsimony of content. In other words, }[55–56] are consistent with [1–3], thus ensuring the plurality of the methodological approaches shaping the debate on ISOs.
+It does not follow from [55–56] that parsimony of content exhausts the debate on the parsimony of ISOs, nor that ISOs are bound to adopt parsimony of content. In other words, [55–56] are consistent with [1–3], thus ensuring the plurality of the methodological approaches shaping the debate on ISOs.
 
 
 
-\textbf{\textcolor{black}{Funding.}}\textcolor{black}{ This paper has received funding from the European Research Council under the European Union Horizon Europe Research and Innovation Programme (GA no. 101041596 ERC -- PolyphonicPhilosophy).}
+\paragraph{Funding.} This paper has received funding from the European Research Council under the European Union Horizon Europe Research and Innovation Programme (GA no. 101041596 ERC---PolyphonicPhilosophy).
 
 
 
-\textbf{\textcolor{black}{Disclamer. }}\textcolor{black}{Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union. Neither the European Union nor the granting authority can be held responsible for them.}
+\paragraph{Disclamer.} Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union. Neither the European Union nor the granting authority can be held responsible for them.
 
-
-
-\section{References}
-
-Allen, R.J., 1997. \textit{A~Formal Approach to Software Architecture (CMU Technical Report CMU-CS-97-144)}. Pittsburgh: Carnegie Mellon, School of Computer Science.
-
-
-
-Baker, A., 2016. Simplicity. In: E.N. Zalta, ed. \textit{The Stanford Encyclopedia of Philosophy}, Winter 2016. [online] Metaphysics Research Lab, Stanford University. Available at: {\textless}https://plato.stanford.edu/archives/win2016/entries/simplicity/{\textgreater} [Accessed 29 January 2024].
-
-
-
-Baljon, C.J., 2002. History of history and canons of design. \textit{Design Studies}, [online] 23(3), pp.333–343. https://doi.org/10.1016/S0142-694X(01)00042-4.
-
-
-
-Bentley, J.L. and McIlroy, M.D., 1993. Engineering a~sort function. \textit{Software: Practice and Experience}, [online] 23(11), pp.1249–1265. https://doi.org/10.1002/spe.4380231105.
-
-
-
-Bernaras, A., Laresgoiti, I. and Corera, J., 1996. Building and Reusing Ontologies for Electrical Network Applications. In: W. Wahlster, ed. \textit{Proceedings of the 12th European Conference on Artificial Intelligence (ECAI'96)}. Chichester, UK: John Wiley and Sons. pp.298–302.
-
-
-
-Borst, W.N., 1997. \textit{Construction of Engineering Ontologies for Knowledge Sharing and Reuse}. [online] University of Twente, Centre for Telematics and Information Technology (CTIT). Available at: {\textless}https://research.utwente.nl/en/publications/construction-of-engineering-ontologies-for-knowledge-sharing-and-{\textgreater} [Accessed 31 January 2024].
-
-
-
-Burgun, A., Botti, G., Fieschi, M. and Le Beux, P., 1999. Sharing knowledge in medicine: semantic and ontologic facets of medical concepts. In: \textit{IEEE SMC'99 Conference Proceedings. 1999 IEEE International Conference on Systems, Man, and Cybernetics (Cat. No.99CH37028)}. [online] IEEE SMC'99 Conference Proceedings. 1999 IEEE International Conference on Systems, Man, and Cybernetics. Tokyo, Japan: IEEE. pp.300–305. https://doi.org/10.1109/ICSMC.1999.816568.
-
-
-
-Dijkstra, E.W., 1979. The Humble Programmer. Turing Award Lecture. In: E. Yourdon, ed. \textit{Classics in Software Engineering}. [online] New York, N.Y: Yourdon Press. pp.113–128. Available at: {\textless}http://archive.org/details/classicsinsoftwa00your{\textgreater} [Accessed 31 January 2024].
-
-
-
-Fiddaman, M. and Rodriguez-Pereyra, G., 2018. The Razor and the Laser. \textit{Analytic Philosophy}, [online] 59(3), pp.341–358. https://doi.org/10.1111/phib.12128.
-
-
-
-Floyd, R.W., 1967. Assigning Meanings to Programs. \textit{Proceedings of Symposium on Applied Mathematics}, [online] 19, pp.19–32. Available at: {\textless}http://laser.cs.umass.edu/courses/cs521-621.Spr06/papers/Floyd.pdf{\textgreater}.
-
-
-
-Gelernter, D.H., 1998. \textit{Machine Beauty: Elegance and the Heart of Technology}. [online] New York: Basic Books. Available at: {\textless}http://archive.org/details/machinebeautyele00gele{\textgreater} [Accessed 31 January 2024].
-
-
-
-Grenon, P., 2008. A~Primer on Knowledge Representation and Ontological Engineering. In: K. Munn and B. Smith, eds. \textit{Applied Ontology}. [online] Frankfurt am Main: Ontos Verlag. pp.57–82. https://doi.org/10.1515/9783110324860.57.
-
-
-
-Gruber, T., 2009. Ontology. In: L. Liu and M.T. Özsu, eds. \textit{Encyclopedia of Database Systems}. [online] Boston, MA: Springer US. pp.1963–1965. https://doi.org/10.1007/978-0-387-39940-9\_1318.
-
-
-
-Gruber, T.R., 1993. A~translation approach to portable ontology specifications. \textit{Knowledge Acquisition}, [online] 5(2), pp.199–220. https://doi.org/10.1006/knac.1993.1008.
-
-
-
-Guarino, N., 1998. Formal Ontologies and Information Systems. In: N. Guarino, ed. \textit{Formal Ontology in Information Systems. Proceedings of FOIS'98, Trento, Italy, 6-8 June 1998.} Amsterdam: IOS Press. pp.3–15.
-
-
-
-Guarino, N. and Giaretta, P., 1995. Ontologies and Knowledge Bases: Towards a~Terminological Clarification. In: N.J.I. Mars, ed. \textit{Towards Very Large Knowledge Bases: Knowledge Building and Knowledge Sharing}. Amsterdam: IOS Press. pp.25–32.
-
-
-
-Hill, R.K., 2018. Elegance in Software. In: L. De Mol and G. Primiero, eds. \textit{Reflections on Programming Systems}, Philosophical Studies Series. [online] Cham: Springer International Publishing. pp.273–286. https://doi.org/10.1007/978-3-319-97226-8\_10.
-
-
-
-Jaziri, W. and Gargouri, F., 2010. Ontology Theory, Management and Design: An Overview and Future Directions. In: W. Jaziri and F. Gargouri, eds. \textit{Ontology Theory, Management and Design: Advanced Tools and Models}. [online] IGI Global. pp.27–77. https://doi.org/10.4018/978-1-61520-859-3.ch002.
-
-
-
-Krzanowski, R. and Polak, P., 2022. The Meta-Ontology of AI Systems with Human-Level Intelligence. \textit{Philosophical Problems in Science (Zagadnienia Filozoficzne w~Nauce)}, (73), pp.199–232.
-
-
-
-Lando, G., 2010. \textit{Ontologia. Un'introduzione}. Rome: Carocci.
-
-
-
-Laurini, R., 2017. \textit{Geographic Knowledge Infrastructure: Applications to Territorial Intelligence and Smart Cities}. London: ISTE Press - Elsevier.
-
-
-
-Lewis, D., 1973. \textit{Counterfactuals}. 1st ed. Oxford: Blakwell.
-
-
-
-Motara, Y.M. and Van Der Schyff, K., 2019. A~functional ontology for information systems. \textit{South African Computer Journal}, [online] 31(2). https://doi.org/10.18489/sacj.v31i2.691.
-
-
-
-Neches, R., Fikes, R.E., Finin, T., Gruber, T., Patil, R., Senator, T. and Swartout, W.R., 1991. Enabling Technology for Knowledge Sharing. \textit{AI Magazine}, [online] 12(3), pp.36–36. https://doi.org/10.1609/aimag.v12i3.902.
-
-
-
-Noy, N.F. and McGuinness, D.L., 2003. \textit{Ontology Development 101: A~Guide to Creating Your First Ontology}. [online] Stanford, CA: Stanford University. Available at: {\textless}http://www.ksl.stanford.edu/KSL\_Abstracts/KSL-01-05.html{\textgreater} [Accessed 1 February 2024].
-
-
-
-Oram, A. and Wilson, G. eds., 2007. \textit{Beautiful code}. 1st ed. Theory in practice series. Beijing[202F?]; Sebastapol, Calif: O'Reilly.
-
-
-
-Parsons, G., 2015. \textit{The Philosophy of Design}. Cambridge: Polity press.
-
-
-
-Partridge, C., Mitchell, A., Cook, A., Sullivan, J. and West, M., 2020. \textit{A~Survey of Top-Level Ontologies - to inform the ontological choices for a~Foundation Data Model}. [online] CDBB. https://doi.org/10.17863/CAM.58311.
-
-
-
-Pawson, J., 1998. \textit{Minimum}. London: Phaidon Press.
-
-
-
-Schaffer, J., 2015. What Not to Multiply Without Necessity. \textit{Australasian Journal of Philosophy}, [online] 93(4), pp.644–664. https://doi.org/10.1080/00048402.2014.992447.
-
-
-
-Smith, B., 2004. Ontology. In: L. Floridi, ed. \textit{The Blackwell guide to the philosophy of computing and information}, Blackwell philosophy guides, 1st ed. Malden, Mass.: Blackwell. pp.155–166.
-
-
-
-Sober, E., 1975. \textit{Simplicity}. [online] Oxford: Oxford University Press. https://doi.org/10.1093/acprof:oso/9780198244073.001.0001.
-
-
-
-Sober, E., 2002. What is the Problem of Simplicity? In: A. Zellner, H.A. Keuzenkamp and M. McAleer, eds. \textit{Simplicity, Inference, and Modelling}. Cambridge: Cambridge University Press. pp.13–32.
-
-
-
-Sowa, J.F., 2005. \textit{Guided Tour of Ontology}. [online] Available at: {\textless}http://www.jfsowa.com/ontology/guided.htm{\textgreater} [Accessed 29 January 2024].
-
-
-
-Studer, R., Benjamins, V.R. and Fensel, D., 1998. Knowledge engineering: Principles and methods. \textit{Data \& Knowledge Engineering}, [online] 25(1), pp.161–197. https://doi.org/10.1016/S0169-023X(97)00056-6.
-
-
-
-Swartout, B., Patil, R., Knight, K. and Russ, T., 1997. Toward Distributed Use of Large-Scale Ontologies. In: \textit{AAAI symposium on ontological engineering}. Stanford, CA. pp.138–148.
-
-
-
-Tambassi, T., 2021. \textit{The Philosophy of Geo-Ontologies: Applied Ontology of Geography}. SpringerBriefs in Geography. [online] Cham: Springer International Publishing. https://doi.org/10.1007/978-3-030-78145-3.
-
-
-
-Tambassi, T. and Magro, D., 2015. Ontologie informatiche della geografia. Una sistematizzazione del dibattito contemporaneo. \textit{Rivista di estetica}, [online] (58), pp.191–205. https://doi.org/10.4000/estetica.447.
-
-
-
-Turner, R., 2018. \textit{Computational Artifacts: Towards a~Philosophy of Computer Science}. [online] Berlin, Heidelberg: Springer. https://doi.org/10.1007/978-3-662-55565-1.
-
-
-
-Uschold, M., Box, P.O. and Usa, W., 1999. A~Framework for Understanding and Classifying Ontology Applications. In: \textit{Proceedings of the IJCAI99 Workshop on Ontologies and Problem-Solving Method}. Stockholm.
-
-
-
-Van Inwagen, P., 2001. \textit{Ontology, identity, and modality: essays in metaphysics}. Cambridge studies in Philosophy. Cambridge, U.K.[202F?]; New York: Cambridge University Press.
-
-
-
-Wirth, N., 1974. On the Design of Programming Languages. In: \textit{Proc. IFICP Congress 74}. [online] pp.386–393. Available at: {\textless}https://web.eecs.umich.edu/\~{}bchandra/courses/papers/Wirth\_Design.pdf{\textgreater} [Accessed 1 February 2024].
-
-
-
-Yao, L., Divoli, A., Mayzus, I., Evans, J.A. and Rzhetsky, A., 2011. Benchmarking Ontologies: Bigger or Better? \textit{PLoS Computational Biology}, [online] 7(1), p.e1001055. https://doi.org/10.1371/journal.pcbi.1001055.
-
-\end{document}
-
+\end{artengenv}

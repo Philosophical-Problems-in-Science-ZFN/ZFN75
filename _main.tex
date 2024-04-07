@@ -1157,6 +1157,14 @@ backend=biber]{biblatex}
 
 %------przypisy----------------------------------------
 
+%\usepackage{bigfoot}
+%\DeclareNewFootnote{default}
+
+%\usepackage[splitrule]{footmisc}
+
+\interfootnotelinepenalty=5000
+
+
 \makeatletter
 \renewcommand\@makefntext[1]{\leftskip=0em\hskip0em\@makefnmark#1}
 \makeatother
@@ -1164,7 +1172,10 @@ backend=biber]{biblatex}
 \renewcommand{\footnoterule}{\kern5pt\hrule width1in\kern5pt}
 
 %lekko przedefiniowany przypis (odstęp między znaczkiem przypisu, a~tekstem przypisu)
-\renewcommand\footnote[1]{\footnotemark\footnotetext{\hspace{0.2em}#1}}
+\let\oldfootnotetext\footnotetext
+\renewcommand\footnotetext[1]{\oldfootnotetext{\hspace{0.2em}#1}}
+
+\renewcommand\footnote[1]{\footnotemark\footnotetext{#1}}
 
 %przypis redakcji (oznaczany asteriskiem),
 %nie zmienia numeracji przypisów autorskich
@@ -1233,7 +1244,7 @@ backend=biber]{biblatex}
 
 
 
-\interfootnotelinepenalty=5000
+
 
 
 
@@ -1371,8 +1382,8 @@ backend=biber]{biblatex}
 %\input{ART_Krzanowski/Krzanowski.tex}
 %\input{ART_Leciejewski/Leciejewski.tex}
 %\input{ART_Polak/Polak.tex}
-\input{ART_Sierotowicz/Sierotowicz.tex}
-%\input{ART_Tambassi/Tambassi.tex}
+%\input{ART_Sierotowicz/Sierotowicz.tex}
+\input{ART_Tambassi/Tambassi.tex}
 %\input{ART_Trombik/Trombik.tex}
 
 
